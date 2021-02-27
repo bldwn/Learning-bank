@@ -1,11 +1,21 @@
-   // Setup
-var express = require("express");
-var http = require("http");
-var app = express();
+const express = require('express');
+const app = express();
 
-   // Run the server
-http.createServer(app).listen(55555);
-console.log('Express server listening on port 55555');
+app.get('/', (req, res) => {
+  res.send('connected');
+}); 
+
+app.get('/api/project', (req, res) => {
+   res.send('Proj Money');
+});
+
+app.get('/api/project/:id', (req, res) => {
+   res.send('ProjId:("")'));
+});
+
+
+http.createServer(app).listen();
+console.log('Express server by listening on port 55555');
 
    // Here is the Model, the data storage
 var products = [
